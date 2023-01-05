@@ -1,14 +1,33 @@
 {
-  "posts": [
+  "cars": [
     {
       "id": 1,
-      "title": "Hello Sudipta",
-      "body": "Quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+      "brand": "Tata",
+      "year": 2019,
+			"type":"Manual",
+      "kms": 10000,
+      "Description": "Tata Altroz with all original documents",
+      "Price": 500000
     },
     {
       "id": 2,
-      "title": "Eum Et Est Occaecati",
-      "body": "Recusandae consequuntur expedita et cum\nreprehenderit ut quas totam\nautem sunt rem eveniet architecto"
+      "brand": "Tata",
+			"type":"AMT",
+      "year": 2017,
+      "kms": 8000,
+      "Description": "Tata Nexon with all original documents",
+      "Price": 800000
+    }
+  ],
+"wishlisted_cars": [
+    {
+      "id": 1,
+      "brand": "Tata",
+      "year": 2019,
+			"type":"Manual",
+      "kms": 10000,
+      "Description": "Tata Altroz with all original documents",
+      "Price": 500000
     }
   ]
 }
