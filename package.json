@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/sudiptadip/mockapi-1#readme",
   "dependencies": {
-    "json-server": "^0.17.1"
+    "json-server": "^0.17.1",
+    "react-router-dom": "^6.6.2"
   }
 }
