@@ -1,38 +1,28 @@
-let N = 4;
-let M = 3;
+const express = require("express")
+var cors = require('cors')
+const { connection } = require("./config/db")
+const { signinRouter } = require("./router/Signin.route")
+const { signupRouter } = require("./router/Signup.router")
+const app = express()
+app.use(express.json())
+app.use(cors())
 
-function checkDiagonal(mat, i, j) {
-  let res = mat[i][j];
-  while (++i < N && ++j < M) {
-    // mismatch found
-    if (mat[i][j] != res) return false;
-  }
-  return true;
-}
-function isToeplitz(mat) {
-  for (let i = 0; i < M; i++) {
-    if (!checkDiagonal(mat, 0, i)) return false;
-  }
+app.get('/',(req,res)=>{
+    res.send("hello world")
+})
 
-  for (let i = 1; i < N; i++) {
-    if (!checkDiagonal(mat, i, 0)) return false;
-  }
-  return true;
-}
 
-let mat =[[1, 2, 3, 4],
-          [5, 1, 2, 3], 
-          [9, 5, 1, 5]];
-matrix(mat,3,4)
+app.use('/signup',signupRouter)
 
-function matrix(arr,N,M){
+app.use('/signin',signinRouter)
 
-  for(let i=1;i<N;i++){
-    for(let j=1;j<M;j++){
-        if(arr[i][j] !== arr[i-1][j-1]){
-          return console.log(false)
-        }
+
+app.listen(8000 , async ()=>{
+    try{
+        await connection
+        console.log('connected to mongodb')
+    }catch(err){
+        console.log('show error')
+        console.log(err)
     }
-  }
-  console.log(true)
-}
+})
