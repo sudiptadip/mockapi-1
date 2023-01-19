@@ -17,7 +17,7 @@ app.use('/signup',signupRouter)
 app.use('/signin',signinRouter)
 
 
-app.listen(8000 , async ()=>{
+app.listen(8001 , async ()=>{
     try{
         await connection
         console.log('connected to mongodb')
